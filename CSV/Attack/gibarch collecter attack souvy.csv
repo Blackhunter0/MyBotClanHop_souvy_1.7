@@ -1,0 +1,38 @@
+NOTE  |Author: Souvy 3.0
+NOTE  |Attack: Gibarch 4 FINGER new
+NOTE  |Make Troops: 8 giants, 40% barb, 60% archer
+
+
+      |-----------------------------------------------------------------------------------------------|
+      |                                                                                               |
+      |                                                                                               |
+
+      |EXTR. GOLD |EXTR.ELIXIR|EXTR. DARK |DEPO. GOLD |DEPO.ELIXIR|DEPO. DARK |TOWNHALL   |FORCED SIDE|
+SIDE  |2          |3          |0          |0          |0          |5          |0          |           |
+
+
+      |VECTOR_____|SIDE_______|DROP_POINTS|ADDTILES___|VERSUS_____|RANDOMX_PX_|RANDOMY_PX_|___________|
+MAKE  |A          |FRONT-LEFT |10         |1          |INT-EXT    |0          |2          |           |vector for all front left 
+MAKE  |B          |FRONT-RIGHT|10         |1          |INT-EXT    |0          |2          |           |vector for all front right
+MAKE  |C          |BACK-LEFT  |10         |1          |INT-EXT    |0          |2          |           |vector for all back left
+MAKE  |D          |BACK-RIGHT |10         |1          |INT-EXT    |0          |2          |           |vector for all back right
+MAKE  |E          |RIGHT-FRONT|10         |1          |INT-EXT    |0          |2          |           |vector for all right front
+MAKE  |F          |RIGHT-BACK |10         |1          |INT-EXT    |0          |2          |           |vector for all right back
+MAKE  |G          |LEFT-FRONT |10         |1          |INT-EXT    |0          |2          |           |vector for all left front
+MAKE  |H          |LEFT-BACK  |10         |1          |INT-EXT    |0          |2          |           |vector for all left back
+
+      |VECTOR_____|INDEX______|QTY_X_VECT_|TROOPNAME__|DELAY_DROP_|DELAYCHANGE|SLEEPAFTER_|           |
+DROP  |I          |1          |4          |Espell     |0          |0          |200        |           |drop quake(s)
+DROP  |A-B-E-F    |1-8        |1          |giant      |0          |0          |0          |           |launch  giants
+DROP  |A-B-E-F    |3-10       |10         |barb       |0          |0          |0          |           |LAUNCH BARB
+DROP  |A-B-E-F    |2-10       |15         |arch       |0          |0          |0          |           |launch ARCHER
+DROP  |G-H-C-D    |1-8        |1          |giant      |0          |0          |0          |           |launch  giants
+DROP  |G-H-C-D    |3-10       |10         |barb       |0          |0          |0          |           |LAUNCH BARB
+DROP  |G-H-C-D    |2-10       |18         |arch       |0          |0          |0          |           |launch ARCHER
+DROP  |A          |1          |1          |king       |0          |0          |0          |           |launch king   
+DROP  |A          |1          |1          |queen      |0          |0          |0          |           |launch queen
+DROP  |A          |1          |1          |castle     |0          |0          |0          |           |launch castle  
+DROP  |A          |1          |1          |warden     |0          |0          |0          |           |launch warden
+RECALC|           |           |           |           |           |           |           |           |Calculating remaining troops
+DROP  |A-B-C-D-E-F|1-8        |3          |REMAIN     |0          |0          |0          |           |launch  giants TROOPS LEFT
+
