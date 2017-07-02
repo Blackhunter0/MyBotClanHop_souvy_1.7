@@ -273,7 +273,16 @@ Func ParseAttackCSV($debug = False)
 							Setlog("Discard row, " & $sErrorText & " parameter:row " & $rownum)
 							debugAttackCSV("Discard row, " & $sErrorText & " parameter:row " & $rownum)
 						Else
-							DropTroopFromINI($value1, $index1, $index2, $indexArray, $qty1, $qty2, $value4, $delaypoints1, $delaypoints2, $delaydrop1, $delaydrop2, $sleepdrop1, $sleepdrop2, $debug)
+							If $value4 = "REMAIN" Then         ;drop remain troops
+							  SetLog("dropRemain:  Dropping left over troops", $COLOR_BLUE)
+							  IF PrepareAttack($iMatchMode, True) > 0 Then
+								 For $ii = $eLava To $eBarb Step -1; lauch all remaining troops from last to first
+									LauchTroop($ii, 1, 0, 1)
+								 Next
+							  EndIf
+						   Else
+						   DropTroopFromINI($value1, $index1, $index2, $indexArray, $qty1, $qty2, $value4, $delaypoints1, $delaypoints2, $delaydrop1, $delaydrop2, $sleepdrop1, $sleepdrop2, $debug)
+						   EndIf
 						EndIf
 						ReleaseClicks($g_iAndroidAdbClicksTroopDeploySize)
 						If _Sleep($DELAYRESPOND) Then Return ; check for pause/stop
