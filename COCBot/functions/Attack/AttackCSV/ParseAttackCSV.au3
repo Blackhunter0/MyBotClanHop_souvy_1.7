@@ -275,7 +275,7 @@ Func ParseAttackCSV($debug = False)
 						Else
 							If $value4 = "REMAIN" Then         ;drop remain troops
 							  SetLog("dropRemain:  Dropping left over troops", $COLOR_BLUE)
-							  IF PrepareAttack($iMatchMode, True) > 0 Then
+							  IF PrepareAttack($g_iMatchMode, True) > 0 Then
 								 For $ii = $eLava To $eBarb Step -1; lauch all remaining troops from last to first
 									LauchTroop($ii, 1, 0, 1)
 								 Next
